@@ -72,8 +72,10 @@ class ToDoListTestSpecs2 extends org.specs2.mutable.Specification {
         // Given
         val idToRemove = 1
         // When
-        todoList.items = todoList.items.filter(_.id !=idToRemove)
+        val result = todoList.remove(idToRemove)
+
         // Then
+        result must_== true
         todoList.items must not contain (todoElement01)
       }
     }
